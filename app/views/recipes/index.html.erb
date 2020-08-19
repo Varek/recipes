@@ -1,0 +1,8 @@
+<% @recipes.each do |recipe| %>
+  <div>
+    <%= link_to recipe_path(recipe.id) do %>
+      <h4><%= recipe.title%></h4>
+      <%= image_tag(recipe.photo.resize(400).load) %>
+    <% end -%>
+  </div>
+<% end -%>

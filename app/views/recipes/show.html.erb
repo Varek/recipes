@@ -1,0 +1,13 @@
+<h1><%= @recipe.title %></h1>
+<%= image_tag(@recipe.photo.resize(600).load) %>
+<ul>
+  <% @recipe.tags.each do |tag|%>
+    <li><%= tag.name %></li>
+  <% end -%>
+</ul>
+<p><%= parse_markdown @recipe.description %></p>
+<% if @recipe.chef %>
+  <i>
+    presented by <%= @recipe.chef.name %>
+  <i>
+<% end %>
