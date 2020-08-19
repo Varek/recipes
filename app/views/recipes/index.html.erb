@@ -1,8 +1,13 @@
-<% @recipes.each do |recipe| %>
-  <div>
-    <%= link_to recipe_path(recipe.id) do %>
-      <h4><%= recipe.title%></h4>
-      <%= image_tag(recipe.photo.resize(400).load) %>
-    <% end -%>
-  </div>
-<% end -%>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
+  <% @recipes.each do |recipe| %>
+    <div class="col mb-4">
+      <div class='card h-100'>
+        <%= image_tag(recipe.photo.resize(400).load, class: 'card-img-top') %>
+        <div class='card-body'>
+          <h5 class="card-title"><%= recipe.title%></h5>
+          <%= link_to 'See recipe', recipe_path(recipe.id), class: 'btn btn-primary stretched-link' %>
+        </div>
+      </div>
+    </div>
+  <% end -%>
+</div>

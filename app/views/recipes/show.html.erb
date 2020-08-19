@@ -1,13 +1,21 @@
-<h1><%= @recipe.title %></h1>
-<%= image_tag(@recipe.photo.resize(600).load) %>
-<ul>
-  <% @recipe.tags.each do |tag|%>
-    <li><%= tag.name %></li>
-  <% end -%>
-</ul>
-<p><%= parse_markdown @recipe.description %></p>
-<% if @recipe.chef %>
-  <i>
-    presented by <%= @recipe.chef.name %>
-  <i>
-<% end %>
+<% content_for :title, "#{@recipe.title} - Recipes" %>
+<div class='mb-3'>
+  <%= link_to "< Back", :back %>
+</div>
+<%= image_tag(@recipe.photo.resize(800).load, class: 'img-fluid mb-3') %>
+  <div class='row'>
+    <div class='col-md-8'>
+    <h2 class='mb-1'><%= @recipe.title %></h1>
+    <div class='mb-2'>
+      <% @recipe.tags.each do |tag|%>
+        <span class="badge badge-light"><%= tag.name %></span>
+      <% end -%>
+    </div>
+    <% if @recipe.chef %>
+      <i>
+        presented by <b><%= @recipe.chef.name %></b>
+      </i>
+    <% end %>
+    <%= parse_markdown @recipe.description %>
+  </div>
+</div>
