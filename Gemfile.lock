@@ -98,6 +98,8 @@ GEM
       contentful_model (~> 1.0)
       rails (>= 4.2)
       redcarpet (~> 3.2)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     crass (1.0.6)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
@@ -108,6 +110,7 @@ GEM
       rake
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    hashdiff (1.0.1)
     http (4.4.1)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
@@ -184,6 +187,7 @@ GEM
     redcarpet (3.5.0)
     regexp_parser (1.7.1)
     rubyzip (2.3.0)
+    safe_yaml (1.0.5)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
@@ -215,6 +219,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.7)
+    vcr (6.0.0)
     web-console (4.0.4)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -224,6 +229,10 @@ GEM
       nokogiri (~> 1.6)
       rubyzip (>= 1.3.0)
       selenium-webdriver (>= 3.0, < 4.0)
+    webmock (3.8.3)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
     webpacker (4.3.0)
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
@@ -255,8 +264,10 @@ DEPENDENCIES
   sprockets-rails!
   turbolinks (~> 5)
   tzinfo-data
+  vcr
   web-console (>= 3.3.0)
   webdrivers
+  webmock
   webpacker (~> 4.0)
 
 RUBY VERSION
